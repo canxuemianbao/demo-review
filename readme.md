@@ -12,7 +12,7 @@
 <!--
 rbac 支持设置 disabled, 忽视权限控制
 <RBACProvider disabled={isCompany}>
-每个组件内都可能用了 useFeatureCode，和写一个新的 hook 批量替换，加一层新逻辑？
+每个组件内都可能用了 useFeatureCode，和写一个新的 hook 批量替换，加一层新逻辑？proxy function return true
 -->
 
 4. 在 company console 中, 没有 add shipment button
