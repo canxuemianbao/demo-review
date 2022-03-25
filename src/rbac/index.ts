@@ -1,5 +1,18 @@
 export const ability = {
   can: (operation: string, resource: string) => {
-    return operation === "view" && resource === "aftership/shipments";
+    let res = operation === "view" && resource === "aftership/shipments";
+
+    const api = {
+      mode(m: string) {
+        if (m === "company") res = true;
+        return api;
+      },
+
+      get() {
+        return res;
+      },
+    };
+
+    return api;
   },
 };

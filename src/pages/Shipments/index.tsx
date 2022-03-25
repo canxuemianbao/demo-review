@@ -4,9 +4,17 @@ import { useGetShipmentQuery } from "../../graphql";
 import { ability } from "../../rbac";
 import Filter from "./components/Filter";
 import { List } from "./components/List";
+import { useViewMode } from "./components/ViewModeProvider/ViewModeProvider";
 
 function Shipments() {
-  const hasAbility = ability.can("view", "aftership/shipments");
+  const viewMode = useViewMode();
+
+  // You get the idea...
+  const hasAbility = ability
+    .can("view", "aftership/shipments")
+    .mode(viewMode)
+    .get();
+
   const shipments = useGetShipmentQuery();
   const hasFeatureCode = useFeatureCode("add shipment");
 
