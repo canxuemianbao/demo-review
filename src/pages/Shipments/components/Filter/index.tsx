@@ -1,18 +1,10 @@
-import { Button } from "@shopify/polaris";
-import { useFeatureCode } from "../../../../billing";
-import { ability } from "../../../../rbac";
+import FilterContainer from "./Container";
+import FilterCompanyContainer from "./CompanyContainer";
 
-function Filter() {
-  const hasFeature = useFeatureCode("filter");
-  const hasAbility = ability.can("view", "aftership/shipments");
-
-  return (
-    <Button>
-      i am filter.{" "}
-      {hasFeature ? "(I have feature!)" : "(I don't have feature ☹️)"}
-      {hasAbility ? "(I have ability!)" : "(I don't have ability ☹️)"}
-    </Button>
+export default function () {
+  return import.meta.env.company ? (
+    <FilterCompanyContainer />
+  ) : (
+    <FilterContainer />
   );
 }
-
-export default Filter;
