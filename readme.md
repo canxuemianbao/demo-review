@@ -21,3 +21,17 @@ rbac 支持设置 disabled, 忽视权限控制
 5. 其余的功能， company console 和 normal view 是一样的
 
 <!-- 打包两个 bundle 分别对应两个 entry, shipments 只是 UI -->
+<!--
+```
+() => {
+const {data,refetch} = useFetch()
+const onReFetch = () => {
+  refetch()
+}
+const onClick = () => {}
+
+reutn <OnlyUI data onClick onReFetch />
+
+}
+```
+-->
