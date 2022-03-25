@@ -1,5 +1,6 @@
 import { AppProvider } from "@shopify/polaris";
 import enTranslations from "@shopify/polaris/locales/en.json";
+import { CompanyContext } from "./context";
 import Shipments from "./pages/Shipments";
 
 export const theme = {
@@ -15,9 +16,13 @@ export const theme = {
 };
 
 function App() {
+  const isCompanyConsole = window.location.pathname.includes("/company.html");
+
   return (
     <AppProvider theme={theme} i18n={enTranslations}>
-      <Shipments />
+      <CompanyContext.Provider value={isCompanyConsole}>
+        <Shipments />
+      </CompanyContext.Provider>
     </AppProvider>
   );
 }
