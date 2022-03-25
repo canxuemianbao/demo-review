@@ -1,0 +1,77 @@
+export const normalShipments = [
+  {
+    trackingNumber: "123456789",
+    status: "delivered",
+    createdAt: "2020-01-01T00:00:00.000Z",
+    updatedAt: "2020-01-01T00:00:00.000Z",
+    origin: "US",
+    destination: "US",
+  },
+  {
+    trackingNumber: "UPS123456789",
+    status: "in_transit",
+    createdAt: "2020-01-01T00:00:00.000Z",
+    updatedAt: "2020-01-01T00:00:00.000Z",
+    origin: "US",
+    destination: "US",
+  },
+  {
+    trackingNumber: "FedEx123456789",
+    status: "in_transit",
+    createdAt: "2020-01-01T00:00:00.000Z",
+    updatedAt: "2020-01-01T00:00:00.000Z",
+    origin: "US",
+    destination: "US",
+  },
+  {
+    trackingNumber: "USPS123456789",
+    status: "exception",
+    createdAt: "2020-01-01T00:00:00.000Z",
+    updatedAt: "2020-01-01T00:00:00.000Z",
+    origin: "US",
+    destination: "US",
+  },
+];
+
+export const companyShipments = [
+  {
+    trackingNumber: "company_ups123456789",
+    status: "delivered",
+    createdAt: "2020-01-01T00:00:00.000Z",
+    updatedAt: "2020-01-01T00:00:00.000Z",
+    origin: "US",
+    destination: "US",
+  },
+  {
+    trackingNumber: "123456789",
+    status: "delivered",
+    createdAt: "2020-01-01T00:00:00.000Z",
+    updatedAt: "2020-01-01T00:00:00.000Z",
+    origin: "US",
+    destination: "US",
+  },
+  {
+    trackingNumber: "UPS123456789",
+    status: "in_transit",
+    createdAt: "2020-01-01T00:00:00.000Z",
+    updatedAt: "2020-01-01T00:00:00.000Z",
+    origin: "US",
+    destination: "US",
+  },
+  {
+    trackingNumber: "FedEx123456789",
+    status: "in_transit",
+    createdAt: "2020-01-01T00:00:00.000Z",
+    updatedAt: "2020-01-01T00:00:00.000Z",
+    origin: "US",
+    destination: "US",
+  },
+  {
+    trackingNumber: "USPS123456789",
+    status: "exception",
+    createdAt: "2020-01-01T00:00:00.000Z",
+    updatedAt: "2020-01-01T00:00:00.000Z",
+    origin: "US",
+    destination: "US",
+  },
+];
