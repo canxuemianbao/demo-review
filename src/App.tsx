@@ -1,6 +1,8 @@
 import { AppProvider } from "@shopify/polaris";
 import enTranslations from "@shopify/polaris/locales/en.json";
-import Shipments from "./pages/Shipments";
+import { ROLE } from "./enums";
+import CompanyShipments from "./pages/Shipments/Company";
+import NormalShipments from "./pages/Shipments/Normal";
 
 export const theme = {
   colors: {
@@ -16,8 +18,8 @@ export const theme = {
 
 function App() {
   return (
-    <AppProvider theme={theme} i18n={enTranslations}>
-      <Shipments />
+    <AppProvider  i18n={enTranslations} >
+      {window.role === ROLE.COMPANY? <CompanyShipments/> : <NormalShipments />}
     </AppProvider>
   );
 }

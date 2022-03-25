@@ -1,5 +1,7 @@
+import { ROLE } from "../enums";
+
 export const ability = {
   can: (operation: string, resource: string) => {
-    return operation === "view" && resource === "aftership/shipments";
+    return window.role !== ROLE.COMPANY && operation === "view" && resource === "aftership/shipments";
   },
 };
