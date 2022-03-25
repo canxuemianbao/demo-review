@@ -1,12 +1,15 @@
-import { Card, DataTable, Page } from "@shopify/polaris";
+import { Card, Page } from "@shopify/polaris";
 import { useFeatureCode } from "../../billing";
+import { WithAbility } from "../../components/WithAbility";
 import { useGetShipmentQuery } from "../../graphql";
-import { ability } from "../../rbac";
 import Filter from "./components/Filter";
 import { List } from "./components/List";
 
+export interface ShipmentsProps {
+  permission: any
+}
+
 function Shipments() {
-  const hasAbility = ability.can("view", "aftership/shipments");
   const shipments = useGetShipmentQuery();
   const hasFeatureCode = useFeatureCode("add shipment");
 
@@ -20,8 +23,7 @@ function Shipments() {
         },
       }}
     >
-      {hasAbility && <Filter />}
-      {!hasAbility && "cannot view filter"}
+      <Filter />
       <Card>
         <List shipments={shipments} />
       </Card>
@@ -29,4 +31,19 @@ function Shipments() {
   );
 }
 
-export default Shipments;
+function CompanyShipments() {
+  const shipments = useGetShipmentQuery();
+
+  return (
+    <Page
+      title="Sales by product"
+    >
+      <span>"cannot view filter"</span>
+      <Card>
+        <List shipments={shipments} />
+      </Card>
+    </Page>
+  );
+}
+
+export default WithAbility(Shipments, CompanyShipments);
