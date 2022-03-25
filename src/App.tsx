@@ -1,6 +1,7 @@
 import { AppProvider } from "@shopify/polaris";
 import enTranslations from "@shopify/polaris/locales/en.json";
 import Shipments from "./pages/Shipments";
+import ViewModeProvider from "./pages/Shipments/components/ViewModeProvider/ViewModeProvider";
 
 export const theme = {
   colors: {
@@ -17,7 +18,9 @@ export const theme = {
 function App() {
   return (
     <AppProvider theme={theme} i18n={enTranslations}>
-      <Shipments />
+      <ViewModeProvider>
+        <Shipments />
+      </ViewModeProvider>
     </AppProvider>
   );
 }
