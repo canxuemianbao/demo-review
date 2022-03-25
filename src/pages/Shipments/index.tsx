@@ -1,5 +1,6 @@
 import { Card, DataTable, Page } from "@shopify/polaris";
 import { useFeatureCode } from "../../billing";
+import consolePath from "../../constants/consolePath";
 import { useGetShipmentQuery } from "../../graphql";
 import { ability } from "../../rbac";
 import Filter from "./components/Filter";
@@ -13,7 +14,7 @@ function Shipments() {
   return (
     <Page
       title="Sales by product"
-      primaryAction={{
+      primaryAction={consolePath.includes(window.location.pathname) ? undefined :{
         content: "Add shipment",
         onAction: () => {
           !hasFeatureCode && alert("you dont has this feature");
