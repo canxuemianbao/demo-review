@@ -20,7 +20,7 @@ rbac 支持设置 disabled, 忽视权限控制
 
 5. 其余的功能， company console 和 normal view 是一样的
 
-<!-- 打包两个 bundle 分别对应两个 entry, shipments 只是 UI -->
+<!-- 打包两个 bundle 分别对应两个 entry、 APP, /shipments 只是 UI， 需要包一层逻辑, 以后也可以剪切到其他项目 -->
 <!--
 ```
 () => {
